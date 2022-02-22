@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recipes-container">
     <div class="input-container">
       <FontAwesomeIcon class="icon" icon="search" />
       <input
@@ -18,6 +18,13 @@ const searchPhrase = ref("");
 </script>
 
 <style lang="scss">
+.recipes-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: $main__bg;
+}
+
 .input-container {
   display: flex;
   justify-content: center;

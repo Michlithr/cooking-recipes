@@ -5,10 +5,10 @@ import SideMenu from "@/components/SideMenu.vue";
 
 <template>
   <div class="home-container">
-    <header class="side-menu">
+    <header>
       <SideMenu />
     </header>
-    <main class="content">
+    <main>
       <SearchRecipes />
     </main>
   </div>
@@ -18,17 +18,5 @@ import SideMenu from "@/components/SideMenu.vue";
 .home-container {
   display: flex;
   justify-content: flex-start;
-
-  .side-menu {
-    min-width: 200px;
-    background: $header__bg;
-  }
-
-  .content {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    background: $main__bg;
-  }
 }
 </style>

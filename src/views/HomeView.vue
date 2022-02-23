@@ -1,22 +1,20 @@
-<script setup lang="ts">
-import SearchRecipes from "@/components/SearchRecipes.vue";
-import SideMenu from "@/components/SideMenu.vue";
-</script>
-
 <template>
-  <div class="home-container">
-    <header>
-      <SideMenu />
-    </header>
-    <main>
-      <SearchRecipes />
-    </main>
-  </div>
+  <main>
+    <SearchRecipes />
+    <RegionPicker />
+  </main>
 </template>
 
+<script setup lang="ts">
+import SearchRecipes from "@/components/SearchRecipes.vue";
+import RegionPicker from "@/components/RegionPicker.vue";
+</script>
+
 <style lang="scss">
-.home-container {
+main {
+  width: 100vw;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

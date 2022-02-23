@@ -17,12 +17,13 @@
 <style lang="scss">
 .menu-container {
   height: 100vh;
-  min-width: 250px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background: $header__bg;
+  box-shadow: 1px gray;
 
   button {
     padding: 12px;

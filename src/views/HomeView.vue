@@ -1,9 +1,22 @@
-<script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
-    <TheWelcome />
+    <SearchRecipes />
+    <RegionPicker />
+    <RecommendedRecipesList />
   </main>
 </template>
+
+<script setup lang="ts">
+import SearchRecipes from "@/components/SearchRecipes.vue";
+import RegionPicker from "@/components/RegionPicker.vue";
+import RecommendedRecipesList from "@/components/recipes/RecommendedRecipesList.vue";
+</script>
+
+<style lang="scss">
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

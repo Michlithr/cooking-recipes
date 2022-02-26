@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="menu-container">
     <h2>Cooking recipes!</h2>
@@ -11,8 +13,6 @@
     </nav>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style lang="scss">
 .menu-container {

@@ -1,15 +1,15 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const searchPhrase = ref("");
+</script>
+
 <template>
   <div class="input-container">
     <FontAwesomeIcon class="icon" icon="search" />
     <input v-model="searchPhrase" placeholder="write your search phrase here" />
   </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-
-const searchPhrase = ref("");
-</script>
 
 <style lang="scss">
 .input-container {

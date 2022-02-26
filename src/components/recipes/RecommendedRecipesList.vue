@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import RecipeCard from "@/components/recipes/RecipeCard.vue";
+import type Recipe from "@/interfaces/Recipe";
+import RecipesService from "@/services/RecipesService";
+import { onMounted, reactive } from "vue";
+const recipes: Recipe[] = reactive([]);
+
+onMounted(async () => {
+  await RecipesService.fetchRecipes()
+    .then((response) => {
+      recipes.push(...response);
+      console.log(recipes);
+    })
+    .catch((error) => console.log(error));
+});
+</script>
+
 <template>
   <div class="list-container">
     <h1>Recipes propositions</h1>
@@ -5,47 +22,11 @@
       <RecipeCard
         v-for="(recipe, key) in recipes"
         :key="key"
-        :recipe="recipe.title"
+        :recipe="recipe"
       />
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import RecipeCard from "@/components/recipes/RecipeCard.vue";
-import { ref } from "vue";
-
-const recipes = ref([
-  {
-    id: 1,
-    title: "title 1",
-  },
-  {
-    id: 2,
-    title: "title 2",
-  },
-  {
-    id: 3,
-    title: "title 3",
-  },
-  {
-    id: 4,
-    title: "title 4",
-  },
-  {
-    id: 5,
-    title: "title 5",
-  },
-  {
-    id: 6,
-    title: "title 5",
-  },
-  {
-    id: 7,
-    title: "title 5",
-  },
-]);
-</script>
 
 <style lang="scss">
 .list-container {

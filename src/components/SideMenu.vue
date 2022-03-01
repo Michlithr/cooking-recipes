@@ -1,8 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouteNames } from "@/enums/RouteNames";
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+
+function returnHome() {
+  if (route.path !== "/") router.replace({ name: RouteNames.Home });
+}
+</script>
 
 <template>
   <div class="menu-container">
-    <h2>Cooking recipes!</h2>
+    <h2 @click="returnHome">Cooking recipes!</h2>
     <hr />
     <button>Sign in / Sign up</button>
     <h3>Navigation</h3>

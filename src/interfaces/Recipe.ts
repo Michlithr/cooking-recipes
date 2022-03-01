@@ -3,6 +3,6 @@ export default interface Recipe {
   title: string;
   image: string;
   description: string;
-  difficulty: string;
+  difficulty: number;
   preparationTime: number;
 }

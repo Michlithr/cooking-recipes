@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouteNames } from "@/enums/RouteNames";
 import type Recipe from "@/interfaces/Recipe";
 import { useRouter } from "vue-router";
 
@@ -10,28 +11,49 @@ const router = useRouter();
 
 function showDetails() {
   router.push({
-    path: "/recipeDetails",
-    params: { recipeId: props.recipe.id },
+    name: RouteNames.RecipeDetails,
+    params: { id: props.recipe.id },
   });
+}
+
+function getImagePath() {
+  return `/src/assets/${props.recipe.image}.jpg`;
 }
 </script>
 
 <template>
   <div class="recipe-container" @click="showDetails">
-    <h1>{{ props.recipe.title }}</h1>
-    <h2>{{ props.recipe.difficulty }}</h2>
-    <h2>{{ props.recipe.preparationTime }}</h2>
-    <p>{{ props.recipe.image }}</p>
+    <img :src="getImagePath()" />
+    <b>{{ props.recipe.title }}</b>
     <p>{{ props.recipe.description }}</p>
+    <p>Preparation time: {{ props.recipe.preparationTime }}</p>
+    <p>Difficulty: {{ props.recipe.difficulty }}/5</p>
   </div>
 </template>
 
 <style lang="scss">
 .recipe-container {
   width: 180px;
-  height: 180px;
   margin: 20px;
-  border: 1px solid black;
-  box-shadow: 1px black;
+  cursor: pointer;
+
+  img {
+    height: 180px;
+    width: 180px;
+  }
+
+  b {
+    font-size: 16px;
+  }
+
+  p {
+    height: 20px;
+    margin: 6px 0;
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 </style>

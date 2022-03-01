@@ -9,7 +9,6 @@ onMounted(async () => {
   await RecipesService.fetchRecipes()
     .then((response) => {
       recipes.push(...response);
-      console.log(recipes);
     })
     .catch((error) => console.log(error));
 });

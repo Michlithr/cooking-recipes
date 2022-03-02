@@ -24,7 +24,10 @@ const searchPhrase = ref("");
   box-shadow: 1px grey;
 
   .icon {
-    margin: 8px;
+    padding: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: $primary;
   }
 
   input {

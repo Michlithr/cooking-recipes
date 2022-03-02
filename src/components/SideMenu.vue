@@ -1,9 +1,21 @@
+<script setup lang="ts">
+import { RouteNames } from "@/enums/RouteNames";
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+
+function returnHome() {
+  if (route.path !== "/") router.replace({ name: RouteNames.Home });
+}
+</script>
+
 <template>
   <div class="menu-container">
-    <h2>Cooking recipes!</h2>
+    <h1 @click="returnHome">Cooking recipes!</h1>
     <hr />
     <button>Sign in / Sign up</button>
-    <h3>Navigation</h3>
+    <h2>Navigation</h2>
     <nav class="navigation-menu">
       <a>Recipes</a>
       <a>Meal creator</a>
@@ -11,8 +23,6 @@
     </nav>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style lang="scss">
 .menu-container {
@@ -22,29 +32,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: $header__bg;
-  box-shadow: 1px gray;
+  background: $white__bg;
+
+  h1 {
+    margin: 60px 0;
+    color: $primary;
+  }
 
   button {
+    margin-bottom: 20px;
     padding: 12px;
-    margin: 14px 0;
     border-radius: 20px;
     border: none;
-    box-shadow: 2px 2px darkviolet;
-    background: blueviolet;
-    color: white;
+    background: $accent;
+    color: $font-light;
     font-size: 16px;
     font-weight: bold;
   }
-}
 
-.navigation-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .navigation-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  a {
-    margin: 6px 0;
+    a {
+      margin: 6px 0;
+      font-size: 16px;
+    }
   }
 }
 </style>

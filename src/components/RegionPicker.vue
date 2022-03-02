@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="region-images-container">
     <div class="image">
@@ -22,8 +24,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style lang="scss">
 .region-images-container {

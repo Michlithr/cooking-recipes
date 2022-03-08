@@ -8,6 +8,16 @@ export const recipes: Recipe[] = [
     description: "This is example description for a recipe",
     difficulty: 2,
     preparationTime: 120,
+    servings: 8,
+    ingredients: [
+      { name: "pepper", amount: 0.5, measure: "tbs" },
+      { name: "salt", amount: 0.5, measure: "tbs" },
+    ],
+    directions: [
+      "step 1 cos tam cos tam pomixuj",
+      "cos tam posol i dodaj papriken kiken",
+      "no i wsio, do pieca to",
+    ],
   } as Recipe,
   {
     id: 1,
@@ -16,6 +26,16 @@ export const recipes: Recipe[] = [
     description: "This is example description for a recipe",
     difficulty: 3,
     preparationTime: 120,
+    servings: 8,
+    ingredients: [
+      { name: "pepper", amount: 0.5, measure: "tbs" },
+      { name: "salt", amount: 0.5, measure: "tbs" },
+    ],
+    directions: [
+      "step 1 cos tam cos tam pomixuj",
+      "cos tam posol i dodaj papriken kiken",
+      "no i wsio, do pieca to",
+    ],
   } as Recipe,
   {
     id: 2,
@@ -24,6 +44,16 @@ export const recipes: Recipe[] = [
     description: "This is example description for a recipe",
     difficulty: 4.5,
     preparationTime: 120,
+    servings: 8,
+    ingredients: [
+      { name: "pepper", amount: 0.5, measure: "tbs" },
+      { name: "salt", amount: 0.5, measure: "tbs" },
+    ],
+    directions: [
+      "step 1 cos tam cos tam pomixuj",
+      "cos tam posol i dodaj papriken kiken",
+      "no i wsio, do pieca to",
+    ],
   } as Recipe,
   {
     id: 3,
@@ -32,6 +62,16 @@ export const recipes: Recipe[] = [
     description: "This is example description for a recipe",
     difficulty: 5,
     preparationTime: 120,
+    servings: 8,
+    ingredients: [
+      { name: "pepper", amount: 0.5, measure: "tbs" },
+      { name: "salt", amount: 0.5, measure: "tbs" },
+    ],
+    directions: [
+      "step 1 cos tam cos tam pomixuj",
+      "cos tam posol i dodaj papriken kiken",
+      "no i wsio, do pieca to",
+    ],
   } as Recipe,
   {
     id: 4,
@@ -40,5 +80,15 @@ export const recipes: Recipe[] = [
     description: "This is example description for a recipe",
     difficulty: 3.5,
     preparationTime: 120,
+    servings: 8,
+    ingredients: [
+      { name: "pepper", amount: 0.5, measure: "tbs" },
+      { name: "salt", amount: 0.5, measure: "tbs" },
+    ],
+    directions: [
+      "step 1 cos tam cos tam pomixuj",
+      "cos tam posol i dodaj papriken kiken",
+      "no i wsio, do pieca to",
+    ],
   } as Recipe,
 ];

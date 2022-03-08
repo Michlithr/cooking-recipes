@@ -37,6 +37,7 @@ function returnHome() {
   h1 {
     margin: 60px 0;
     color: $primary;
+    cursor: pointer;
   }
 
   button {
@@ -48,6 +49,7 @@ function returnHome() {
     color: $font-light;
     font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .navigation-menu {
@@ -58,6 +60,7 @@ function returnHome() {
     a {
       margin: 6px 0;
       font-size: 16px;
+      cursor: pointer;
     }
   }
 }

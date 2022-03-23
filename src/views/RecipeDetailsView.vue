@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import type Recipe from "@/interfaces/Recipe";
-import type Measure from "@/interfaces/Measure";
-import { Measures } from "@/enums/Measures";
 import RecipesService from "@/services/RecipesService";
 import { reactive } from "vue";
 import { useRoute } from "vue-router";
 import DifficultyStar from "@/components/recipes/DifficultyStar.vue";
 import RecipeMeasure from "../components/recipes/RecipeMeasure.vue";
+import IngredientsList from "../components/recipes/IngredientsList.vue";
+import DirectionsList from "../components/recipes/DirectionsList.vue";
 
 const route = useRoute();
 const id = +route.params.id;
 const recipe = reactive({} as Recipe);
-const measures = reactive([] as Measure[]);
 
 RecipesService.fetchRecipe(id)
   .then((response) => {
@@ -46,36 +45,18 @@ function getImagePath() {
         <div class="difficulty">
           <DifficultyStar :difficulty="recipe.difficulty" />
         </div>
-        <div class="measures">
-          <RecipeMeasure
-            :value="recipe.preparationTime"
-            :measure="Measures.Time"
-          />
-          <div class="vertical-line" />
-          <RecipeMeasure
-            :value="recipe.ingredients.length"
-            :measure="Measures.Ingredients"
-          />
-          <div class="vertical-line" />
-          <RecipeMeasure
-            :value="recipe.servings"
-            :measure="Measures.Servings"
-          />
-        </div>
+        <RecipeMeasure
+          :time="recipe.preparationTime"
+          :ingredients="recipe.ingredients.length"
+          :servings="recipe.servings"
+        />
       </div>
       <img :src="getImagePath()" />
     </div>
     <hr />
-    <div>
-      <p v-for="(ingredient, key) in recipe.ingredients" :key="key">
-        {{ ingredient.amount }}, {{ ingredient.measure }}, {{ ingredient.name }}
-      </p>
-    </div>
-    <div>
-      <p v-for="(step, key) in recipe.directions" :key="key">
-        {{ key }}: {{ step }}
-      </p>
-    </div>
+    <IngredientsList :ingredients="recipe.ingredients" />
+    <hr />
+    <DirectionsList :directions="recipe.directions" />
   </div>
 </template>
 
@@ -85,6 +66,7 @@ function getImagePath() {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
 
   h1 {
     margin: 20px 0;
@@ -108,16 +90,6 @@ function getImagePath() {
 
     .important-details {
       width: 25vw;
-
-      .measures {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-
-        .vertical-line {
-          border-right: 2px solid $accent;
-        }
-      }
     }
 
     img {

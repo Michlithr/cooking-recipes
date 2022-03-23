@@ -26,7 +26,7 @@ function returnHome() {
 
 <style lang="scss">
 .menu-container {
-  height: 100vh;
+  height: 100%;
   width: 250px;
   display: flex;
   flex-direction: column;
